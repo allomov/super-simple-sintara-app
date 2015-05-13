@@ -9,3 +9,10 @@ get '/' do
       Hello from #{host}:#{port}! <br/>
   EOS
 end
+
+
+get '/env' do
+  host = ENV['VCAP_APP_HOST']
+  port = ENV['VCAP_APP_PORT']
+  ENV.to_a.map { |e| "<br><b>#{e.first}</b>: #{e.last}</br>" }.join("\n")
+end
