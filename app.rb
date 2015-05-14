@@ -10,7 +10,6 @@ get '/' do
   EOS
 end
 
-
 get '/env' do
   ENV.to_a.map { |e| "<br><b>#{e.first}</b>: #{e.last}</br>" }.join("\n")
 end
